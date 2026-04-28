@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+
+<html class="light" lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Agenda - PMII Paser</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="tailwind.config.js"></script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background antialiased">
+<!-- TopNavBar -->
+<div id="header-placeholder"></div>
+
+<main class="pt-32 pb-24">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-8 mb-xl">
+<div class="flex flex-col md:flex-row justify-between items-end gap-md">
+<div class="max-w-2xl">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-secondary-container/20 text-secondary font-label-bold text-caption uppercase tracking-wider mb-4 border border-secondary/20">
+                        Event Mendatang
+                    </span>
+<h1 class="font-h1 text-h1 text-primary mb-6">Agenda Pergerakan &amp; Kaderisasi</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Jadwal kegiatan organisasi, pelatihan formal, diskusi publik, hingga aksi sosial PMII Cabang Paser.
+                    </p>
+</div>
+<div class="hidden md:flex gap-4 mb-2">
+<div class="flex items-center gap-2 bg-white p-4 rounded-xl border border-outline-variant">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">calendar_month</span>
+<div>
+<p class="font-label-bold text-caption text-on-surface-variant">Bulan Ini</p>
+<p class="font-h3 text-h3 text-primary">12 Agenda</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured & Bento Grid Layout for Events -->
+<section class="max-w-7xl mx-auto px-8">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-lg">
+<!-- Main Featured Event -->
+<div class="md:col-span-8 bg-white border border-outline-variant rounded-xl overflow-hidden group hover:border-secondary transition-colors duration-300 relative">
+<div class="absolute top-6 left-6 z-10">
+<div class="bg-amber-400 text-primary-container px-4 py-2 rounded-lg font-h3 text-center">
+<span class="block text-h3 leading-none">24</span>
+<span class="text-caption font-bold uppercase tracking-widest">Okt</span>
+</div>
+</div>
+<div class="h-96 relative overflow-hidden">
+<img alt="Featured Agenda" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="large group of enthusiastic students in a formal seminar hall listening to a keynote speaker in professional lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAccAZYxsToAyL4ZE-BA08WemUTC4DOGOBSmB-lQuhcUTfo5g6sr_mxyNACHuHLDll8g-gMVIop8-MLW_XT3ZrXf5AWnqYaQV6d1gTaj9SQ2uDmBPybhAaFtEJ-j8BVSpezlsFssPqQdslco1P_bKlhxEapefUuwzZm5KzDW_Yz1mHMNlZC_NC40Tsha67cQO4YXcU1041dHMoryi0IppbpG4I8YpTulxIe8edeBkGgV-zNQ91ooj9ohe4LmyLAIvhFFVvLF7MEr4E"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent"></div>
+</div>
+<div class="p-8">
+<div class="flex items-center gap-4 mb-4">
+<span class="px-3 py-1 rounded bg-primary-container/10 text-primary-container font-label-bold text-caption border border-primary-container/20">Kaderisasi Formal</span>
+<span class="flex items-center gap-1 text-on-surface-variant text-caption font-medium">
+<span class="material-symbols-outlined text-sm">schedule</span> 08:00 - Selesai
+                            </span>
+</div>
+<h2 class="font-h2 text-h2 text-primary mb-4">Masa Penerimaan Anggota Baru (MAPABA) Raya 2024</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">
+                            Gerbang awal menjadi bagian dari keluarga besar PMII Paser. Mengusung tema "Membentuk Kader Ulul Albab yang Adaptif di Era Digital."
+                        </p>
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary">location_on</span>
+<span class="font-label-bold text-on-surface">Gedung Serbaguna, Tana Paser</span>
+</div>
+<button class="flex items-center gap-2 text-primary font-bold hover:text-secondary transition-colors group">
+                                Detail Kegiatan 
+                                <span class="material-symbols-outlined transition-transform group-hover:translate-x-1">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Highlight -->
+<div class="md:col-span-4 space-y-lg">
+<div class="bg-primary-container text-white rounded-xl p-8 border-t-4 border-amber-400 relative overflow-hidden">
+<div class="relative z-10">
+<span class="text-amber-400 font-label-bold text-caption uppercase tracking-widest mb-2 block">Diskusi Publik</span>
+<h3 class="font-h3 text-h3 mb-4">Refleksi Kedaulatan Energi Paser</h3>
+<div class="flex items-center gap-2 mb-6 opacity-80">
+<span class="material-symbols-outlined text-sm">event</span>
+<span class="text-caption">28 Oktober 2024</span>
+</div>
+<p class="text-on-primary-container font-body-md mb-8">
+                                Mengkaji potensi dan tantangan sumber daya alam di Kabupaten Paser dalam perspektif mahasiswa.
+                            </p>
+<a class="inline-flex items-center justify-center w-full py-3 bg-amber-400 text-primary font-bold rounded-lg hover:brightness-110 transition-all" href="#">
+                                Ingatkan Saya
+                            </a>
+</div>
+<!-- Abstract decoration -->
+<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+<div class="bg-white border border-outline-variant rounded-xl p-6 hover:shadow-xl hover:shadow-primary/5 transition-all">
+<div class="flex items-start gap-4">
+<div class="bg-surface-container-high px-3 py-2 rounded-lg text-center min-w-[60px]">
+<span class="block font-bold text-lg leading-none">02</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter opacity-60">Nov</span>
+</div>
+<div>
+<span class="text-secondary font-label-bold text-[10px] uppercase mb-1 block">Internal</span>
+<h4 class="font-bold text-primary mb-2">Rapat Kerja Cabang (RAKERCAB) IV</h4>
+<div class="flex items-center gap-1 text-on-surface-variant text-[12px]">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<span>Sekretariat PC PMII Paser</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Agenda Feed -->
+<div class="md:col-span-12 mt-xl">
+<div class="flex items-center justify-between mb-8">
+<h3 class="font-h3 text-h3 text-primary">Daftar Agenda Lainnya</h3>
+<div class="flex gap-2">
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 border border-outline-variant rounded-full hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg">
+<!-- Agenda Card 1 -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 hover:border-amber-400 transition-all group">
+<div class="relative h-48 rounded-lg overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="overhead shot of wooden table with books, pens, and local coffee during a student study session" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6oSiYNxTOfD7EzhD8yKjm7J3Gxuap29LQUcDX1zLv72Eb2z7y1_fNX47JivFq0HkQ8ajlrfQStZ0djZ9tLhqugnUaYbS7u3YEdN8scC6X4PHJBRPXpThSdcMPNgo-U-n274ZDV2pvdWAG9qV_A9X19c_AdXj8pTkHRQy3zWXhCv2G3VRUGuG77cN9GoNesbra1njIgNeGpOQm5qtz0vKXuBRYXNxQn0PuG6CcKrPvsM1-ociRjPVmG5EZ4fNZh13FflGHOkxd4l4"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-caption font-bold text-primary">
+                                    05 Nov
+                                </div>
+</div>
+<span class="text-secondary font-label-bold text-caption uppercase mb-2 block">Social</span>
+<h4 class="font-h3 text-h3 text-primary mb-3 leading-tight">PMII Berbagi: Bakti Sosial Desa Pesisir</h4>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Pemberian bantuan logistik dan edukasi literasi bagi anak-anak di wilayah pesisir Paser.</p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img alt="User" data-alt="portrait of a young man smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPBkokfgr3H1uDZbzcatIDe6wphQ2FJwtif7bsMlE7uRgVuoFjp993b__C934cuDtg2G548wow9IzrroUBxoqoP2GswwHM-sIqLSeu-a-dKvksL3Px_vft7xjFyo5JgaOFRnpb8JPjnrr2L1ihewAd0mFy2dsltb7DAYDx-STmquS10kmA5SGqMN1_ra_Tjt2ddb_qN8DS00ZzQScIiHFYOAEhg6HJLhPMUK3k4XacXwiYB8UiwwkqOv9RvlfWd7NywgQLyug_k6M"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 overflow-hidden">
+<img alt="User" data-alt="portrait of a young woman smiling" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyrgOY8JjhXpEUbav_15WxHige4ydTFC6XaFMGDInkiJ4MBjjajW882y58GQ1uGsRLvX6tmeqECifD8QrtPjs1iVfq4R9pOjmyse-0Jyx9cBLBFmzs7Lg7yGijVHRQ9-ocwtX2f4M1XB__DSGWVCX6MbxUxVPEEFPwiVlA_5eofnJi1FLnOMqYHdJPs6Vn8ZvV7-s4xJIuLu8Yrdp-bKvk6QFwTZYs0PS6mpmedraUROSc8VducAbBbTUkTpgM7pzbX6dw5jb3rUU"/>
+</div>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center bg-surface-container text-[10px] font-bold">+15</div>
+</div>
+<span class="text-caption font-bold text-on-surface-variant italic">Peserta Terdaftar</span>
+</div>
+</div>
+<!-- Agenda Card 2 -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 hover:border-amber-400 transition-all group">
+<div class="relative h-48 rounded-lg overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="abstract bright lights in a modern conference room showing blurred figures in a professional atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNAJxBI8WYBOu_wYJci7wO9iCi16S5kI4yn6e7se1mR4ta2pws1wXOW5Q3mmcDnmEvyrkvEwA7E7t7EMLPwo8KR2LAL_ZzKMoxG2qH4Xg3HrwWoao63CiNOXti3aBKgYxlIpgyHCQNKcJMaL-cduPvjJVsKfzJ-GA0JjDXPjTfLSlKw0f40biVU6jKml_1K1inCd4OvbnBX2CPr9xCMH9xOab2QMlS_eFjJk_UDtGryvnB6OzWCVA8dWFEzhcktTmKsZ-VCnetXjY"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-caption font-bold text-primary">
+                                    12 Nov
+                                </div>
+</div>
+<span class="text-secondary font-label-bold text-caption uppercase mb-2 block">Kaderisasi</span>
+<h4 class="font-h3 text-h3 text-primary mb-3 leading-tight">Pelatihan Kader Dasar (PKD) Se-Paser</h4>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Tahap kaderisasi formal kedua untuk mencetak kader mujahid yang militan dan berwawasan luas.</p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-error text-sm" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="text-caption font-bold text-error">Slot Terbatas</span>
+</div>
+<button class="text-primary font-bold text-caption underline underline-offset-4">Daftar Sekarang</button>
+</div>
+</div>
+<!-- Agenda Card 3 -->
+<div class="bg-white rounded-xl border border-outline-variant p-6 hover:border-amber-400 transition-all group">
+<div class="relative h-48 rounded-lg overflow-hidden mb-6">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="diverse group of students sitting around a table with laptops and papers, having an active discussion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0EiuaeOyrKeBjfBwNbSoVI7ko3Ly6gzXbb37MyJeYw4n6ibkT8Mi7xpwBDfONcvhFGgmjoT6T1rCgjPUhar5QFOaSKpslWbvfX5TICmkgBvhEyUpYsznDwmkqvMkBiZhIgUKuq2JIQwyJE6R7XRsZAu-F-mkZoREzshbG32ABUwcydYb1eL_vWdYmAZDbZt69NnVoGSVnKUXLPdnQwXs0O3_FxQ5Bx92IfJqygFV7X84hwP6BnEKZQFwaQu_JHRXfll7HeyTSD_U"/>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded text-caption font-bold text-primary">
+                                    20 Nov
+                                </div>
+</div>
+<span class="text-secondary font-label-bold text-caption uppercase mb-2 block">Dialog</span>
+<h4 class="font-h3 text-h3 text-primary mb-3 leading-tight">Bedah Buku: Pergerakan &amp; Perubahan</h4>
+<p class="font-body-md text-on-surface-variant mb-6 line-clamp-2">Diskusi interaktif membedah karya intelektual dalam memperkuat basis pemikiran kader.</p>
+<div class="pt-6 border-t border-outline-variant flex justify-between items-center">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-sm">mic</span>
+<span class="text-caption font-bold">Terbuka Untuk Umum</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">share</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Calendar View Placeholder (Mobile FAB like interaction for Desktop) -->
+<div class="fixed bottom-10 right-10">
+<button class="w-16 h-16 bg-amber-400 text-blue-950 rounded-full shadow-lg flex items-center justify-center hover:scale-110 transition-transform active:scale-95 group">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<span class="absolute right-full mr-4 bg-primary text-white px-4 py-2 rounded-lg text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
+                Lihat Kalender Lengkap
+            </span>
+</button>
+</div>
+<!-- Footer -->
+<div id="footer-placeholder"></div>
+
+<script src="js/components.js"></script>
+</body></html>

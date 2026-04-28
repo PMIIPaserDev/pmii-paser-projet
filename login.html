@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+<script src="tailwind.config.js"></script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col">
+<div id="header-placeholder"></div>
+
+<main class="flex-grow flex items-center justify-center pt-24 pb-16 px-4 md:px-0">
+<div class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-12 gap-0 overflow-hidden bg-white border border-outline-variant rounded-xl shadow-[0_10px_30px_rgba(0,31,63,0.08)]">
+<div class="hidden md:flex md:col-span-7 relative bg-primary-container overflow-hidden min-h-[600px] flex-col justify-center p-16">
+<div class="absolute inset-0 z-0">
+<img alt="Academic Building" class="w-full h-full object-cover opacity-30 mix-blend-overlay" data-alt="Modern academic building facade with clean lines and glass windows at sunset, soft warm golden light and deep blue shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQNtCl1-9TYE4UF-OidzBbbPz78fuWHfyt8ahJup5bNjliJkeANl9ANJx4GAhR7E0Mqo_2us5iEw5fYl8K46ilzVAZXYW76fYYjb3OxjCs3U-gPnFs-0kVGtzxJcDrHdF4b1VLYOrd-NG0raY3mnfupxV6pxCP1tgwxFu0hJssIDNmJKIle6s5N4R2y-tTpPfmXISiz_OWjk5-mDjePd5dvdy3tn8MrC6_NFo5TVwuYPCp6Ol0SV2odOtPgKfPkngLDWqePj_mhlI"/>
+</div>
+<div class="relative z-10">
+<span class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-caption font-label-bold rounded mb-6">ANGGOTA AKTIF</span>
+<h1 class="font-h1 text-h1 text-white mb-6">Pergerakan Mahasiswa Islam Indonesia</h1>
+<p class="font-body-lg text-body-lg text-on-primary-container max-w-md">
+                        Silakan masuk ke portal sistem informasi organisasi PMII Cabang Paser untuk mengakses data anggota, arsip agenda, dan modul kaderisasi.
+                    </p>
+</div>
+<div class="mt-12 flex items-center gap-4 relative z-10">
+<div class="h-[2px] w-12 bg-secondary-container"></div>
+<span class="text-white font-label-bold text-sm tracking-widest">TANGAN TERKEPAL DAN MAJU KE MUKA</span>
+</div>
+</div>
+<div class="md:col-span-5 bg-white p-8 md:p-16 flex flex-col justify-center">
+<div class="mb-10 text-center md:text-left">
+<h2 class="font-h2 text-h2 text-primary mb-2">Selamat Datang</h2>
+<p class="font-body-md text-on-surface-variant">Gunakan akun SIM PMII untuk melanjutkan</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block font-label-bold text-on-surface mb-2" for="email">Email atau ID Anggota</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="person">person</span>
+<input class="w-full pl-10 pr-4 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="email" placeholder="Masukkan ID Anggota" type="text"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<label class="block font-label-bold text-on-surface" for="password">Kata Sandi</label>
+<a class="text-caption text-secondary hover:underline" href="#">Lupa Sandi?</a>
+</div>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
+<input class="w-full pl-10 pr-12 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="password" placeholder="••••••••" type="password"/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
+<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+</button>
+</div>
+</div>
+<div class="flex items-center">
+<input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="remember" type="checkbox"/>
+<label class="ml-2 font-body-md text-on-surface-variant" for="remember">Tetap masuk selama 30 hari</label>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-lg font-label-bold text-lg hover:bg-primary-container transition-colors duration-200 flex justify-center items-center gap-2" type="submit">
+                        Masuk Ke Portal
+                        <span class="material-symbols-outlined text-md" data-icon="login">login</span>
+</button>
+</form>
+<div class="mt-8 pt-8 border-t border-outline-variant text-center">
+<p class="font-body-md text-on-surface-variant">
+                        Belum terdaftar sebagai kader? 
+                        <a class="text-secondary font-label-bold hover:underline" href="#">Daftar MAPABA</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/components.js"></script>
+</body></html>
