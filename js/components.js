@@ -1,44 +1,47 @@
 document.addEventListener("DOMContentLoaded", () => {
-<<<<<<< HEAD
-=======
-    // Fungsi untuk memuat konten
->>>>>>> fdc665938497460d3a6595b403f8fd2609476dda
+    // 1. Fungsi untuk memuat komponen (Header/Footer)
     const loadComponent = (id, file) => {
         fetch(file)
             .then(res => res.text())
             .then(data => {
                 document.getElementById(id).innerHTML = data;
-<<<<<<< HEAD
                 
-                // Setelah header dimuat, jalankan setup menu
+                // Setelah konten dimuat, jalankan fungsi pendukung
                 if (id === 'header-placeholder') {
-                    setupMobileMenu(); // <--- Tambahkan ini
+                    setupMobileMenu();
                     highlightActiveMenu();
                 }
-            });
+            })
+            .catch(err => console.error("Gagal memuat file: " + file, err));
     };
 
+    // Panggil fungsi pemuat (Hanya dipanggil SEKALI di sini)
     loadComponent("header-placeholder", "header.html");
     loadComponent("footer-placeholder", "footer.html");
 });
 
-// Fungsi baru untuk toggle menu mobile
+// 2. Fungsi Toggle Menu Mobile
 function setupMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const menu = document.getElementById('mobile-menu');
 
     if (btn && menu) {
         btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden'); // Menampilkan atau menyembunyikan
+            menu.classList.toggle('hidden');
         });
     }
 }
-=======
-            });
-    };
 
-    // Panggil fungsi untuk header dan footer
-    loadComponent("header-placeholder", "header.html");
-    loadComponent("footer-placeholder", "footer.html");
-});
->>>>>>> fdc665938497460d3a6595b403f8fd2609476dda
+// 3. Fungsi Highlight Menu Aktif
+function highlightActiveMenu() {
+    const currentPath = window.location.pathname;
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        // Cek link aktif
+        if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html')) {
+            link.classList.add('text-white', 'active-nav-border');
+        }
+    });
+}
