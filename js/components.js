@@ -32,16 +32,26 @@ function setupMobileMenu() {
     }
 }
 
-// 3. Fungsi Highlight Menu Aktif
+// 3. Fungsi Highlight Menu Aktif (Versi Perbaikan)
 function highlightActiveMenu() {
-    const currentPath = window.location.pathname;
+    // Ambil nama file saja dari URL, contoh: "profil.html"
+    const path = window.location.pathname;
+    const page = path.split("/").pop() || 'index.html';
+    
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        // Cek link aktif
-        if (currentPath.endsWith(href) || (currentPath === '/' && href === 'index.html')) {
-            link.classList.add('text-white', 'active-nav-border');
+        
+        // Cek apakah href sama dengan nama file saat ini
+        if (page === href) {
+            // Aktifkan: Warna biru tua dan garis kuning
+            link.classList.add('text-blue-950', 'active-nav-border');
+            link.classList.remove('text-slate-500');
+        } else {
+            // Non-aktif: Warna abu-abu dan hapus garis
+            link.classList.remove('text-blue-950', 'active-nav-border');
+            link.classList.add('text-slate-500');
         }
     });
 }
