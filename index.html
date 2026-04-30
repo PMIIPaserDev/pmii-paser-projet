@@ -41,12 +41,19 @@
                         Mewujudkan kader PMII Paser yang kritis, transformatif, dan religius dalam bingkai Ahlussunnah wal Jama'ah. Bergabunglah bersama gerakan mahasiswa Islam terbesar di Indonesia.
                     </p>
 <div class="flex flex-wrap gap-md pt-md">
-<button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-label-bold rounded-lg shadow-md hover:brightness-95 transition-all">
-                            Daftar MAPABA 2026
-                        </button>
-<button class="px-8 py-4 border-2 border-primary text-primary font-label-bold rounded-lg hover:bg-primary hover:text-white transition-all">
-                            Kenali Kami
-                        </button>
+    <!-- Tombol Daftar MAPABA -->
+    <a href="daftar.html">
+        <button class="px-8 py-4 bg-secondary-container text-on-secondary-container font-label-bold rounded-lg shadow-md hover:brightness-95 transition-all">
+            Daftar MAPABA 2026
+        </button>
+    </a>
+
+    <!-- Tombol Kenali Kami -->
+    <a href="profil.html">
+        <button class="px-8 py-4 border-2 border-primary text-primary font-label-bold rounded-lg hover:bg-primary hover:text-white transition-all">
+            Kenali Kami
+        </button>
+    </a>
 </div>
 </div>
 <div class="relative hidden lg:block">
@@ -70,33 +77,35 @@
 <section class="py-xl bg-surface-container-low">
 <div class="max-w-7xl mx-auto px-8">
 <div class="grid grid-cols-1 md:grid-cols-12 gap-md h-auto lg:h-[600px]">
-<!-- Visi & Misi -->
-<div class="md:col-span-8 bg-white p-lg rounded-xl border border-outline-variant/20 flex flex-col justify-between hover:border-secondary transition-colors group">
-<div>
-<div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mb-md group-hover:bg-secondary-container/20 transition-colors">
-<span class="material-symbols-outlined text-primary group-hover:text-secondary">visibility</span>
-</div>
-<h3 class="font-h2 text-h2 text-primary mb-md">Visi &amp; Misi</h3>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-<div>
-<p class="font-label-bold text-secondary uppercase mb-2">Visi</p>
-<p class="text-on-surface-variant">Terbentuknya pribadi muslim Indonesia yang bertaqwa kepada Allah SWT, berbudi luhur, berilmu, cakap dan bertanggung jawab.</p>
-</div>
-<div>
-<p class="font-label-bold text-secondary uppercase mb-2">Misi</p>
-<ul class="text-on-surface-variant space-y-1 list-disc pl-4">
-<li>Penguatan nilai Aswaja</li>
-<li>Pengembangan intelektual</li>
-<li>Advokasi kebijakan publik</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="mt-md pt-md border-t border-outline-variant/10">
-<a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all" href="profil.html">
-                                Selengkapnya <span class="material-symbols-outlined text-sm">arrow_forward</span>
-</a>
-</div>
+<!-- Tambahkan class 'relative' di div utama ini -->
+<div class="md:col-span-8 bg-white p-lg rounded-xl border border-outline-variant/20 flex flex-col justify-between hover:border-secondary transition-colors group relative">
+    <div>
+        <div class="w-12 h-12 bg-primary/5 rounded-lg flex items-center justify-center mb-md group-hover:bg-secondary-container/20 transition-colors">
+            <span class="material-symbols-outlined text-primary group-hover:text-secondary">visibility</span>
+        </div>
+        <h3 class="font-h2 text-h2 text-primary mb-md">Visi &amp; Misi</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+            <div>
+                <p class="font-label-bold text-secondary uppercase mb-2">Visi</p>
+                <p class="text-on-surface-variant">Terbentuknya pribadi muslim Indonesia yang bertaqwa kepada Allah SWT, berbudi luhur, berilmu, cakap dan bertanggung jawab.</p>
+            </div>
+            <div>
+                <p class="font-label-bold text-secondary uppercase mb-2">Misi</p>
+                <ul class="text-on-surface-variant space-y-1 list-disc pl-4">
+                    <li>Penguatan nilai Aswaja</li>
+                    <li>Pengembangan intelektual</li>
+                    <li>Advokasi kebijakan publik</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div class="mt-md pt-md border-t border-outline-variant/10">
+        <!-- Tambahkan class 'after:absolute after:inset-0' pada tag <a> -->
+        <a class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-4 transition-all after:absolute after:inset-0" href="profil.html">
+            Selengkapnya <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+    </div>
 </div>
 <!-- Total Anggota -->
 <div class="md:col-span-4 bg-primary text-white p-lg rounded-xl flex flex-col justify-between relative overflow-hidden">
