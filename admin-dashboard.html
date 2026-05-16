@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>PMII Paser - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "error-container": "#ffdad6",
+                        "surface": "#fbf9f8",
+                        "error": "#ba1a1a",
+                        "on-tertiary-fixed-variant": "#454748",
+                        "tertiary-fixed-dim": "#c5c7c8",
+                        "surface-container-highest": "#e4e2e1",
+                        "secondary-fixed": "#ffe16d",
+                        "tertiary": "#040607",
+                        "inverse-surface": "#303030",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary-container": "#fcd400",
+                        "outline-variant": "#c4c6cf",
+                        "surface-container-low": "#f6f3f2",
+                        "surface-bright": "#fbf9f8",
+                        "surface-tint": "#476083",
+                        "on-secondary-fixed-variant": "#544600",
+                        "inverse-primary": "#afc8f0",
+                        "tertiary-container": "#1c1f20",
+                        "surface-container": "#f0eded",
+                        "surface-dim": "#dcd9d9",
+                        "primary-container": "#001f3f",
+                        "outline": "#74777f",
+                        "inverse-on-surface": "#f3f0f0",
+                        "on-tertiary-container": "#848688",
+                        "on-surface": "#1b1c1c",
+                        "on-error-container": "#93000a",
+                        "on-error": "#ffffff",
+                        "on-surface-variant": "#43474e",
+                        "on-tertiary-fixed": "#191c1d",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c400",
+                        "on-primary-fixed": "#001c3a",
+                        "on-secondary-container": "#6e5c00",
+                        "on-primary-fixed-variant": "#2f486a",
+                        "tertiary-fixed": "#e1e3e4",
+                        "primary": "#000613",
+                        "surface-variant": "#e4e2e1",
+                        "surface-container-high": "#eae8e7",
+                        "primary-fixed": "#d4e3ff",
+                        "background": "#fbf9f8",
+                        "on-secondary": "#ffffff",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#afc8f0",
+                        "on-primary-container": "#6f88ad",
+                        "secondary": "#705d00",
+                        "on-tertiary": "#ffffff",
+                        "on-background": "#1b1c1c"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "48px",
+                        "md": "16px",
+                        "container-max": "1200px",
+                        "xs": "4px",
+                        "gutter": "20px",
+                        "lg": "24px",
+                        "sm": "8px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Plus Jakarta Sans"],
+                        "caption": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-bold": ["Plus Jakarta Sans"],
+                        "h2": ["Plus Jakarta Sans"],
+                        "h3": ["Plus Jakarta Sans"],
+                        "body-lg": ["Plus Jakarta Sans"]
+                    },
+                    "fontSize": {
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                        "caption": ["12px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}],
+                        "label-bold": ["14px", {"lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                        "h2": ["32px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                        "h3": ["24px", {"lineHeight": "1.4", "letterSpacing": "0em", "fontWeight": "700"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0em", "fontWeight": "400"}]
+                    }
+                }
+            }
+        };
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f8;
+        }
+        /* Style penyelarasan batas kotak Quill Editor */
+        .ql-toolbar.ql-snow {
+            border-top-left-radius: 0.5rem;
+            border-top-right-radius: 0.5rem;
+            border-color: #c4c6cf;
+            background-color: #f6f3f2;
+        }
+        .ql-container.ql-snow {
+            border-bottom-left-radius: 0.5rem;
+            border-bottom-right-radius: 0.5rem;
+            border-color: #c4c6cf;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface">
+
+    <aside class="h-screen w-64 fixed left-0 top-0 bg-surface-container-low border-r border-outline-variant flex flex-col p-md gap-sm">
+        <div class="mb-xl px-md">
+            <h1 class="text-h3 font-h3 font-extrabold text-primary">PMII Paser</h1>
+            <p class="font-label-bold text-label-bold text-on-surface-variant">Admin Portal</p>
+        </div>
+       <nav class="flex flex-col gap-sm flex-1">
+    <a id="menu-ringkasan" class="flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all cursor-pointer" onclick="switchTab('ringkasan')">
+        <span class="material-symbols-outlined">dashboard</span>
+        <span class="font-label-bold text-label-bold">Ringkasan</span>
+    </a>
+    <a id="menu-berita" class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all cursor-pointer" onclick="switchTab('berita')">
+        <span class="material-symbols-outlined">article</span>
+        <span class="font-label-bold text-label-bold">Kelola Berita</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all" href="struktur.html">
+        <span class="material-symbols-outlined">group</span>
+        <span class="font-label-bold text-label-bold">Data Anggota</span>
+    </a>
+    <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all" href="agenda.html">
+        <span class="material-symbols-outlined">event</span>
+        <span class="font-label-bold text-label-bold">Agenda Kegiatan</span>
+    </a>
+    
+    <div class="mt-auto space-y-xs">
+        <a class="flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all" href="index.html" target="_blank">
+            <span class="material-symbols-outlined">language</span>
+            <span class="font-label-bold text-label-bold">Lihat Situs Publik</span>
+        </a>
+        
+        <a class="flex items-center gap-md px-md py-sm text-error hover:bg-error-container rounded-lg transition-all" href="index.html">
+            <span class="material-symbols-outlined">logout</span>
+            <span class="font-label-bold text-label-bold">Keluar Portal</span>
+        </a>
+    </div>
+</nav>
+    </aside>
+
+    <header class="h-16 fixed top-0 right-0 left-64 z-40 bg-surface border-b border-outline-variant flex justify-between items-center px-lg">
+        <div class="flex items-center gap-md">
+            <h2 id="page-title" class="font-h3 text-h3 font-extrabold text-primary">Portal Admin</h2>
+        </div>
+        <div class="flex items-center gap-lg">
+            <div class="h-8 w-[1px] bg-outline-variant"></div>
+            <div class="flex items-center gap-md">
+                <div class="text-right hidden sm:block">
+                    <p class="font-label-bold text-label-bold text-on-surface">Admin PMII</p>
+                    <p class="text-caption font-caption text-on-surface-variant uppercase">Paser Branch</p>
+                </div>
+                <img alt="Admin User Profile" class="w-10 h-10 rounded-full border-2 border-primary" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBB1B3QURSwaDI0YecGHddjs6cG0be5K4TTW0BOVAdD8amt_UG8MCS18KE6nYzih2F4SqCpXEtn5JfZZImZv-iyq175xvRXiB3AjwGbNWk5pOIzVwSDuKy6ikKppvp_Pc8_lZWhtEj_rqOZ_TA9F3DSOTVn9S5xrNFRLpsYS7maVJczDevrvCI1nY_AuLb3w9YVR1hDjJCp6-KVF1IP0nmllF5599rcjFZqNdABn966mphZSPfvpEFw6Ke-9ogNn8fg_rDi9fxEPlU"/>
+            </div>
+        </div>
+    </header>
+
+    <main id="tab-ringkasan" class="ml-64 pt-16 p-lg page-container">
+        <div class="max-w-container-max mx-auto space-y-xl py-md">
+            <section class="flex flex-col md:flex-row md:items-end justify-between gap-md">
+                <div>
+                    <h2 class="font-h2 text-h2 text-primary">Selamat Datang, Sahabat Admin!</h2>
+                    <p class="font-body-md text-body-md text-on-surface-variant">Berikut adalah ringkasan perkembangan organisasi PMII Cabang Paser hari ini.</p>
+                </div>
+                <div class="flex gap-sm">
+                    <button class="flex items-center gap-sm px-lg py-sm border border-primary text-primary font-label-bold text-label-bold rounded-lg hover:bg-surface-container transition-all">
+                        <span class="material-symbols-outlined text-[20px]">download</span>
+                        Unduh Data Anggota
+                    </button>
+                    <button onclick="switchTab('berita')" class="flex items-center gap-sm px-lg py-sm bg-secondary-container text-on-secondary-container font-label-bold text-label-bold rounded-lg hover:shadow-lg transition-all">
+                        <span class="material-symbols-outlined text-[20px]">add</span>
+                        Tambah Berita Baru
+                    </button>
+                </div>
+            </section>
+
+            <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md">
+                <div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col gap-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-sm bg-primary-container text-white rounded-lg">group</span>
+                        <span class="text-caption font-caption text-secondary">+12% bln ini</span>
+                    </div>
+                    <div>
+                        <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Total Anggota</p>
+                        <h3 class="text-h2 font-h2 text-primary">1,248</h3>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest border-t-4 border-t-secondary border border-outline-variant p-lg rounded-xl flex flex-col gap-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-sm bg-secondary-container text-on-secondary-container rounded-lg">person_add</span>
+                        <span class="bg-error-container text-on-error-container px-sm py-xs rounded text-[10px] font-bold">URGENT</span>
+                    </div>
+                    <div>
+                        <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Pendaftar Baru (MAPABA)</p>
+                        <h3 class="text-h2 font-h2 text-primary">42</h3>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col gap-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-sm bg-surface-variant text-on-surface-variant rounded-lg">article</span>
+                    </div>
+                    <div>
+                        <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Berita Aktif</p>
+                        <h3 class="text-h2 font-h2 text-primary">156</h3>
+                    </div>
+                </div>
+                <div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl flex flex-col gap-sm">
+                    <div class="flex justify-between items-start">
+                        <span class="material-symbols-outlined p-sm bg-surface-variant text-on-surface-variant rounded-lg">calendar_today</span>
+                    </div>
+                    <div>
+                        <p class="text-caption font-caption text-on-surface-variant uppercase tracking-wider">Agenda Mendatang</p>
+                        <h3 class="text-h2 font-h2 text-primary">8</h3>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+                <section class="lg:col-span-2 bg-white rounded-xl border border-outline-variant overflow-hidden">
+                    <div class="px-lg py-md border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+                        <h3 class="font-label-bold text-label-bold text-primary">Pendaftar MAPABA Terbaru</h3>
+                        <a class="text-caption font-caption text-secondary hover:underline" href="#">Lihat Semua</a>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead>
+                                <tr class="bg-surface-container">
+                                    <th class="px-lg py-sm font-label-bold text-caption text-on-surface-variant uppercase">Nama Lengkap</th>
+                                    <th class="px-lg py-sm font-label-bold text-caption text-on-surface-variant uppercase">Kampus / Komisariat</th>
+                                    <th class="px-lg py-sm font-label-bold text-caption text-on-surface-variant uppercase">Tanggal Daftar</th>
+                                    <th class="px-lg py-sm font-label-bold text-caption text-on-surface-variant uppercase">Status</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-outline-variant">
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-lg py-md font-body-md text-on-surface">Ahmad Fauzi</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">STIE Paser</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">24 Okt 2023</td>
+                                    <td class="px-lg py-md">
+                                        <span class="px-sm py-xs bg-secondary-container/20 text-on-secondary-container text-[11px] font-bold rounded-full">MENUNGGU VERIFIKASI</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-lg py-md font-body-md text-on-surface">Siti Aminah</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">Politeknik Paser</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">23 Okt 2023</td>
+                                    <td class="px-lg py-md">
+                                        <span class="px-sm py-xs bg-secondary-container/20 text-on-secondary-container text-[11px] font-bold rounded-full">MENUNGGU VERIFIKASI</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-lg py-md font-body-md text-on-surface">Rizky Pratama</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">STAIS Paser</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">22 Okt 2023</td>
+                                    <td class="px-lg py-md">
+                                        <span class="px-sm py-xs bg-primary-container/10 text-primary text-[11px] font-bold rounded-full">TERVERIFIKASI</span>
+                                    </td>
+                                </tr>
+                                <tr class="hover:bg-surface-container-low transition-colors">
+                                    <td class="px-lg py-md font-body-md text-on-surface">Bambang Wijaya</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">UNMUL Kampus Paser</td>
+                                    <td class="px-lg py-md font-body-md text-on-surface-variant">21 Okt 2023</td>
+                                    <td class="px-lg py-md">
+                                        <span class="px-sm py-xs bg-primary-container/10 text-primary text-[11px] font-bold rounded-full">TERVERIFIKASI</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="space-y-lg">
+                    <div class="bg-primary-container text-white p-lg rounded-xl relative overflow-hidden">
+                        <div class="relative z-10">
+                            <span class="bg-secondary text-primary font-bold text-[10px] px-sm py-xs rounded mb-md inline-block uppercase">Agenda Terdekat</span>
+                            <h4 class="text-h3 font-h3 mb-xs">MAPABA Raya 2023</h4>
+                            <p class="font-body-md opacity-80 mb-lg">Gedung Pertemuan PKK, Tana Paser</p>
+                            <div class="flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-secondary">timer</span>
+                                <span class="font-label-bold">5 Hari Lagi</span>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full -mr-16 -mt-16"></div>
+                    </div>
+                    <div class="bg-surface-container-lowest border border-outline-variant p-lg rounded-xl">
+                        <h4 class="font-label-bold text-label-bold text-primary mb-md">Aktivitas Sistem</h4>
+                        <div class="space-y-md">
+                            <div class="flex gap-md">
+                                <div class="w-2 h-2 rounded-full bg-secondary mt-2"></div>
+                                <div>
+                                    <p class="text-caption font-body-md text-on-surface">Berita <span class="font-bold">"Seminar Kebangsaan"</span> telah dipublikasikan.</p>
+                                    <p class="text-[10px] text-on-surface-variant">2 jam yang lalu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <section class="bg-white border border-outline-variant p-xl rounded-xl">
+                <div class="flex flex-col md:flex-row md:items-center justify-between mb-lg gap-md">
+                    <div>
+                        <h3 class="font-h3 text-h3 text-primary">Target Rekrutmen Tahunan</h3>
+                        <p class="font-body-md text-on-surface-variant">Target Cabang Paser: 500 Anggota Baru</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="text-h2 font-h2 text-secondary">72%</span>
+                        <p class="text-caption font-caption text-on-surface-variant uppercase">Tercapai</p>
+                    </div>
+                </div>
+                <div class="w-full bg-surface-container h-4 rounded-full overflow-hidden">
+                    <div class="bg-gradient-to-r from-primary-container to-secondary h-full" style="width: 72%"></div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <main id="tab-berita" class="ml-64 pt-16 p-lg page-container hidden">
+        <div class="max-w-container-max mx-auto space-y-lg py-md">
+            <div>
+                <h2 class="font-h2 text-h2 text-primary">Buat & Publikasikan Berita</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant">Ketik rilis berita organisasi Cabang Paser di sini. Hasil input HTML murni sementara akan tampil di inspect console browser.</p>
+            </div>
+
+            <form id="form-berita" class="bg-white border border-outline-variant rounded-xl p-lg space-y-lg shadow-sm">
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2" for="judul-berita">Judul Berita</label>
+                    <input class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container transition-all" 
+                        id="judul-berita" placeholder="Masukkan judul rilis berita utama..." type="text" required/>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                    <div>
+                        <label class="block font-label-bold text-on-surface mb-2" for="kategori-berita">Kategori Berita</label>
+                        <select id="kategori-berita" class="w-full px-md py-sm bg-surface-container-low border border-outline-variant rounded-lg focus:ring-2 focus:ring-primary-container font-medium">
+                            <option value="Berita Cabang">Berita Cabang</option>
+                            <option value="Opini & Artikel">Opini & Artikel</option>
+                            <option value="Pengumuman Resmi">Pengumuman Resmi</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block font-label-bold text-on-surface mb-2" for="penulis-berita">Penulis / Kontributor</label>
+                        <input id="penulis-berita" class="w-full px-md py-sm bg-surface-container border border-outline-variant rounded-lg text-on-surface-variant cursor-not-allowed" type="text" readonly value="Tim Media PC PMII Paser"/>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block font-label-bold text-on-surface mb-2">Isi Konten Berita</label>
+                    <div id="editor-container" class="bg-white h-80"></div>
+                </div>
+
+                <div class="flex justify-end gap-md pt-md border-t border-outline-variant">
+                    <button type="button" id="btn-reset" class="px-lg py-sm border border-outline text-on-surface-variant rounded-lg font-label-bold hover:bg-surface-container transition-all">
+                        Reset Form
+                    </button>
+                    <button type="submit" class="px-xl py-sm bg-primary text-white rounded-lg font-label-bold hover:bg-primary-container transition-all flex items-center gap-sm shadow">
+                        <span class="material-symbols-outlined text-sm">cloud_upload</span> Publikasikan Berita
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    <script>
+        function switchTab(tabName) {
+            document.querySelectorAll('.page-container').forEach(el => el.classList.add('hidden'));
+            document.getElementById('tab-' + tabName).classList.remove('hidden');
+
+            const menuRingkasan = document.getElementById('menu-ringkasan');
+            const menuBerita = document.getElementById('menu-berita');
+
+            if(tabName === 'ringkasan') {
+                menuRingkasan.className = "flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all cursor-pointer";
+                menuBerita.className = "flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all cursor-pointer";
+                document.getElementById('page-title').innerText = "Portal Admin";
+            } else if(tabName === 'berita') {
+                menuBerita.className = "flex items-center gap-md px-md py-sm bg-secondary-container text-on-secondary-container rounded-lg font-bold transition-all cursor-pointer";
+                menuRingkasan.className = "flex items-center gap-md px-md py-sm text-on-surface-variant hover:text-primary hover:bg-surface-container-highest rounded-lg transition-all cursor-pointer";
+                document.getElementById('page-title').innerText = "Kelola Berita";
+            }
+        }
+
+        const quill = new Quill('#editor-container', {
+            theme: 'snow',
+            placeholder: 'Tulis berita pergerakan cabang di sini...',
+            modules: {
+                toolbar: [
+                    [{ 'header': [1, 2, false] }],
+                    ['bold', 'italic', 'underline'],
+                    ['link', 'image'],
+                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+                    ['clean']
+                ]
+            }
+        });
+
+        const formBerita = document.getElementById('form-berita');
+        formBerita.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const judul = document.getElementById('judul-berita').value;
+            const kategori = document.getElementById('kategori-berita').value;
+            const kontenHTML = quill.getSemanticHTML();
+
+            if (kontenHTML === '<p></p>' || !judul) {
+                alert('Judul berita dan isi rilis tidak boleh kosong!');
+                return;
+            }
+
+            console.log("=== SIMULASI DATA BERITA SIAP KIRIM ===");
+            console.log("Judul Rilis:", judul);
+            console.log("Kategori Berita:", kategori);
+            console.log("Struktur Kode Konten HTML:", kontenHTML);
+            console.log("=======================================");
+
+            alert("Simulasi Posting Berita Berhasil!\n\nData berita \"" + judul + "\" telah tercetak di Console log browser.");
+            
+            formBerita.reset();
+            quill.setContents([]);
+            switchTab('ringkasan');
+        });
+
+        document.getElementById('btn-reset').addEventListener('click', () => {
+            if(confirm('Apakah kamu yakin ingin mengosongkan draf tulisan berita ini?')) {
+                formBerita.reset();
+                quill.setContents([]);
+            }
+        });
+    </script>
+</body>
+</html>

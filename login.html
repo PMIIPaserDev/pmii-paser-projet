@@ -46,12 +46,13 @@
 <h2 class="font-h2 text-h2 text-primary mb-2">Selamat Datang</h2>
 <p class="font-body-md text-on-surface-variant">Gunakan akun SIM PMII untuk melanjutkan</p>
 </div>
-<form class="space-y-6">
+
+<form id="form-login" class="space-y-6">
 <div>
 <label class="block font-label-bold text-on-surface mb-2" for="email">Email atau ID Anggota</label>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="person">person</span>
-<input class="w-full pl-10 pr-4 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="email" placeholder="Masukkan ID Anggota" type="text"/>
+<input class="w-full pl-10 pr-4 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="email" placeholder="admin@pmiipaser.or.id" type="email" required/>
 </div>
 </div>
 <div>
@@ -61,9 +62,9 @@
 </div>
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline" data-icon="lock">lock</span>
-<input class="w-full pl-10 pr-12 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="password" placeholder="••••••••" type="password"/>
-<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary" type="button">
-<span class="material-symbols-outlined" data-icon="visibility">visibility</span>
+<input class="w-full pl-10 pr-12 py-3 bg-[#F8F9FA] border-0 rounded-lg focus:ring-2 focus:ring-primary-container transition-all text-body-md" id="password" placeholder="••••••••" type="password" required/>
+<button class="absolute right-3 top-1/2 -translate-y-1/2 text-outline hover:text-primary-container flex items-center justify-center" type="button" onclick="togglePassword()">
+<span class="material-symbols-outlined" id="toggle-icon">visibility</span>
 </button>
 </div>
 </div>
@@ -71,20 +72,65 @@
 <input class="w-4 h-4 text-primary border-outline-variant rounded focus:ring-primary" id="remember" type="checkbox"/>
 <label class="ml-2 font-body-md text-on-surface-variant" for="remember">Tetap masuk selama 30 hari</label>
 </div>
-<button class="w-full bg-primary text-white py-4 rounded-lg font-label-bold text-lg hover:bg-primary-container transition-colors duration-200 flex justify-center items-center gap-2" type="submit">
-                        Masuk Ke Portal
-                        <span class="material-symbols-outlined text-md" data-icon="login">login</span>
+
+<button id="btn-submit-login" class="w-full bg-primary text-white py-4 rounded-lg font-label-bold text-lg hover:bg-primary-container transition-all duration-200 flex justify-center items-center gap-2" type="submit">
+                        <span id="btn-text">Masuk Ke Portal</span>
+                        <span class="material-symbols-outlined text-md" id="btn-icon">login</span>
 </button>
 </form>
 <div class="mt-8 pt-8 border-t border-outline-variant text-center">
 <p class="font-body-md text-on-surface-variant">
                         Belum terdaftar sebagai kader? 
-                        <a class="text-secondary font-label-bold hover:underline" href="#">Daftar MAPABA</a>
+                        <a class="text-secondary font-label-bold hover:underline" href="daftar.html">Daftar MAPABA</a>
 </p>
 </div>
 </div>
 </div>
 </main>
+
+<div id="footer-placeholder"></div>
+
+<script src="js/components.js"></script>
+
+<script>
+    // 1. Fungsi untuk Menyembunyikan/Memperlihatkan Kata Sandi
+    function togglePassword() {
+        const passwordInput = document.getElementById("password");
+        const toggleIcon = document.getElementById("toggle-icon");
+        
+        if (passwordInput.type === "password") {
+            passwordInput.type = "text";
+            toggleIcon.innerText = "visibility_off";
+        } else {
+            passwordInput.type = "password";
+            toggleIcon.innerText = "visibility";
+        }
+    }
+
+    // 2. Intersept Submit Form untuk Transisi Loading
+    const loginForm = document.getElementById("form-login");
+    const btnSubmit = document.getElementById("btn-submit-login");
+    const btnText = document.getElementById("btn-text");
+    const btnIcon = document.getElementById("btn-icon");
+
+    loginForm.addEventListener("submit", (e) => {
+        e.preventDefault(); // Menahan refresh halaman bawaan
+
+        // Mengubah status tombol menjadi Loading
+        btnSubmit.disabled = true;
+        btnSubmit.classList.remove("bg-primary", "hover:bg-primary-container");
+        btnSubmit.classList.add("bg-slate-400", "cursor-wait");
+        btnText.innerText = "Memverifikasi Akun...";
+        btnIcon.innerText = "sync";
+        btnIcon.classList.add("animate-spin"); // Efek berputar Tailwind
+
+        // Simulasi jeda pemeriksaan server lokal selama 1.5 detik
+        setTimeout(() => {
+            // Pengalihan halaman murni secara lokal ke Dashboard Admin
+            window.location.href = "admin-dashboard.html";
+        }, 1500);
+    });
+</script>
 
 <div id="footer-placeholder"></div>
 

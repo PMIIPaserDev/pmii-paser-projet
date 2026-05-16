@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // 1. Fungsi untuk memuat komponen (Header/Footer)
+    // 1. Fungsi untuk memuat komponen (Header/Footer) secara dinamis
     const loadComponent = (id, file) => {
+        const targetElement = document.getElementById(id);
+        if (!targetElement) return; // Mencegah crash jika elemen placeholder tidak ada di halaman tersebut
+
         fetch(file)
             .then(res => res.text())
             .then(data => {
-                document.getElementById(id).innerHTML = data;
+                targetElement.innerHTML = data;
                 
                 // Setelah konten dimuat, jalankan fungsi pendukung
                 if (id === 'header-placeholder') {
@@ -15,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => console.error("Gagal memuat file: " + file, err));
     };
 
-    // Panggil fungsi pemuat (Hanya dipanggil SEKALI di sini)
+    // Panggil fungsi pemuat komponen statis publik
     loadComponent("header-placeholder", "header.html");
     loadComponent("footer-placeholder", "footer.html");
 });
@@ -32,9 +35,8 @@ function setupMobileMenu() {
     }
 }
 
-// 3. Fungsi Highlight Menu Aktif (Versi Perbaikan)
+// 3. Fungsi Highlight Menu Aktif dengan proteksi tombol Admin
 function highlightActiveMenu() {
-    // Ambil nama file saja dari URL, contoh: "profil.html"
     const path = window.location.pathname;
     const page = path.split("/").pop() || 'index.html';
     
@@ -43,13 +45,21 @@ function highlightActiveMenu() {
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         
-        // Cek apakah href sama dengan nama file saat ini
+        // Pengecualian khusus: Jangan sentuh class warna teks dari tombol admin-dashboard
+        if (href === 'admin-dashboard.html') {
+            if (page === href) {
+                link.classList.add('active-nav-border');
+            } else {
+                link.classList.remove('active-nav-border');
+            }
+            return; 
+        }
+        
+        // Aturan standard untuk menu publik lainnya
         if (page === href) {
-            // Aktifkan: Warna biru tua dan garis kuning
             link.classList.add('text-blue-950', 'active-nav-border');
             link.classList.remove('text-slate-500');
         } else {
-            // Non-aktif: Warna abu-abu dan hapus garis
             link.classList.remove('text-blue-950', 'active-nav-border');
             link.classList.add('text-slate-500');
         }
