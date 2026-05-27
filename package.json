@@ -1,0 +1,22 @@
+{
+  "name": "pmii-paser-projet",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx tailwindcss@3.4.13 -i ./asset/css/input.css -o ./asset/css/style.css",
+    "dev": "npx tailwindcss@3.4.13 -i ./asset/css/input.css -o ./asset/css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PMIIPaserDev/pmii-paser-projet.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PMIIPaserDev/pmii-paser-projet/issues"
+  },
+  "homepage": "https://github.com/PMIIPaserDev/pmii-paser-projet#readme"
+}
