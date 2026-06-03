@@ -32,6 +32,18 @@ function setupMobileMenu() {
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
         });
+
+        // Menutup menu jika klik dilakukan di luar area menu dan tombol hamburger
+        document.addEventListener('click', (event) => {
+            if (!menu.classList.contains('hidden')) {
+                const isClickInsideMenu = menu.contains(event.target);
+                const isClickOnBtn = btn.contains(event.target);
+                
+                if (!isClickInsideMenu && !isClickOnBtn) {
+                    menu.classList.add('hidden');
+                }
+            }
+        });
     }
 }
 

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>404 - Halaman Tidak Ditemukan | PMII Paser</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f8;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #001f3f 0%, #705d00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .glow-circle {
+            filter: blur(80px);
+            opacity: 0.15;
+            animation: pulse 8s infinite alternate;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(0px, 0px);
+            }
+            100% {
+                transform: scale(1.2) translate(20px, -20px);
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-background font-body-md overflow-x-hidden antialiased">
+    <!-- Top Navigation Bar -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content Area -->
+    <main class="pt-20 min-h-[calc(100vh-80px-320px)] flex items-center justify-center relative overflow-hidden py-16">
+        <!-- Background Decorative Elements -->
+        <div class="absolute -z-10 top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full glow-circle"></div>
+        <div class="absolute -z-10 bottom-1/4 right-1/4 w-96 h-96 bg-secondary-container/30 rounded-full glow-circle" style="animation-delay: -4s;"></div>
+
+        <!-- 404 Content Card -->
+        <div class="container-max mx-auto px-8 relative z-10 flex flex-col items-center">
+            <div class="max-w-xl w-full text-center space-y-8">
+                <!-- Illustrated Compass & Map SVG -->
+                <div class="relative inline-block">
+                    <!-- Outer glowing ring -->
+                    <div class="absolute inset-0 bg-secondary-container/20 rounded-full blur-xl scale-125"></div>
+                    <div class="relative bg-white border border-outline-variant/30 rounded-full p-8 shadow-2xl inline-flex items-center justify-center">
+                        <svg class="w-32 h-32 text-primary" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Star/Compass Background -->
+                            <circle cx="100" cy="100" r="80" stroke="currentColor" stroke-width="4" stroke-dasharray="8 8" class="opacity-30" />
+                            <circle cx="100" cy="100" r="55" stroke="currentColor" stroke-width="2" class="opacity-20" />
+                            
+                            <!-- PMII-inspired Stars -->
+                            <path d="M100 25L103 33H111L104 38L107 46L100 41L93 46L96 38L89 33H97L100 25Z" fill="#fcd400" />
+                            <path d="M45 75L47 80H52L48 83L50 88L45 85L40 88L42 83L38 80H43L45 75Z" fill="#fcd400" class="opacity-70" />
+                            <path d="M155 75L157 80H162L158 83L160 88L155 85L150 88L152 83L148 80H153L155 75Z" fill="#fcd400" class="opacity-70" />
+                            
+                            <!-- Broken Path Line -->
+                            <path d="M60 140C70 120 90 120 100 100C110 80 130 80 140 60" stroke="#fcd400" stroke-width="4" stroke-linecap="round" stroke-dasharray="10 10" />
+                            
+                            <!-- Compass Needle pointing to "?" -->
+                            <g transform="translate(100, 100) rotate(45)">
+                                <path d="M0 -50L12 0L0 10L-12 0Z" fill="#001f3f" />
+                                <path d="M0 50L12 0L0 -10L-12 0Z" fill="#fcd400" />
+                                <circle cx="0" cy="0" r="6" fill="#fbf9f8" />
+                            </g>
+                            
+                            <!-- Question mark bubble -->
+                            <circle cx="140" cy="60" r="18" fill="#ffdad6" />
+                            <text x="140" y="67" fill="#93000a" font-family="Plus Jakarta Sans" font-weight="bold" font-size="22" text-anchor="middle">?</text>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h1 class="text-7xl md:text-8xl font-black gradient-text tracking-tight">404</h1>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-primary">Waduh! Halaman Tidak Ditemukan</h2>
+                    <p class="text-on-surface-variant text-body-lg leading-relaxed">
+                        Tangan Terkepal dan Maju Ke Muka! Namun sepertinya Anda keluar dari jalur pergerakan atau alamat yang Anda cari tidak tersedia.
+                    </p>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
+                    <a href="index.html" class="w-full sm:w-auto">
+                        <button class="w-full sm:w-auto px-8 py-4 bg-primary text-white hover:bg-primary/95 hover:shadow-xl transition-all font-bold rounded-xl shadow-lg flex items-center justify-center gap-2 group">
+                            <span class="material-symbols-outlined transition-transform group-hover:-translate-x-1">arrow_back</span>
+                            Kembali ke Beranda
+                        </button>
+                    </a>
+                    <a href="kontak.html" class="w-full sm:w-auto">
+                        <button class="w-full sm:w-auto px-8 py-4 border-2 border-outline hover:bg-surface-variant/30 text-on-surface font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined">mail</span>
+                            Hubungi Kami
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+</body>
+
+</html>
