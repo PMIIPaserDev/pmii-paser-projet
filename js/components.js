@@ -45,6 +45,21 @@ function setupMobileMenu() {
             }
         });
     }
+
+    // Toggle Submenu Update di Mobile
+    const updateBtn = document.getElementById('mobile-update-btn');
+    const updateSubmenu = document.getElementById('mobile-update-submenu');
+    const updateIcon = document.getElementById('mobile-update-icon');
+
+    if (updateBtn && updateSubmenu) {
+        updateBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Mencegah pemicuan klik global yang menutup menu utama
+            updateSubmenu.classList.toggle('hidden');
+            if (updateIcon) {
+                updateIcon.classList.toggle('rotate-180');
+            }
+        });
+    }
 }
 
 // 3. Fungsi Highlight Menu Aktif dengan proteksi tombol Admin
@@ -55,6 +70,18 @@ function highlightActiveMenu() {
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
+        // Proteksi khusus untuk Update Dropdown button
+        if (link.id === 'nav-update-btn') {
+            if (page === 'berita.html' || page === 'agenda.html') {
+                link.classList.add('text-blue-950', 'active-nav-border');
+                link.classList.remove('text-slate-500');
+            } else {
+                link.classList.remove('text-blue-950', 'active-nav-border');
+                link.classList.add('text-slate-500');
+            }
+            return;
+        }
+
         const href = link.getAttribute('href');
         
         // Pengecualian khusus: Jangan sentuh class warna teks dari tombol admin-dashboard
