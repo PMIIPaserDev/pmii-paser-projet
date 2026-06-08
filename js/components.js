@@ -60,6 +60,21 @@ function setupMobileMenu() {
             }
         });
     }
+
+    // Toggle Submenu Komisariat di Mobile
+    const komisariatBtn = document.getElementById('mobile-komisariat-btn');
+    const komisariatSubmenu = document.getElementById('mobile-komisariat-submenu');
+    const komisariatIcon = document.getElementById('mobile-komisariat-icon');
+
+    if (komisariatBtn && komisariatSubmenu) {
+        komisariatBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            komisariatSubmenu.classList.toggle('hidden');
+            if (komisariatIcon) {
+                komisariatIcon.classList.toggle('rotate-180');
+            }
+        });
+    }
 }
 
 // 3. Fungsi Highlight Menu Aktif dengan proteksi tombol Admin
@@ -73,6 +88,18 @@ function highlightActiveMenu() {
         // Proteksi khusus untuk Update Dropdown button
         if (link.id === 'nav-update-btn') {
             if (page === 'berita.html' || page === 'agenda.html') {
+                link.classList.add('text-blue-950', 'active-nav-border');
+                link.classList.remove('text-slate-500');
+            } else {
+                link.classList.remove('text-blue-950', 'active-nav-border');
+                link.classList.add('text-slate-500');
+            }
+            return;
+        }
+
+        // Proteksi khusus untuk Komisariat Dropdown button
+        if (link.id === 'nav-komisariat-btn') {
+            if (page === 'komisariat.html') {
                 link.classList.add('text-blue-950', 'active-nav-border');
                 link.classList.remove('text-slate-500');
             } else {

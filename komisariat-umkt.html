@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html class="light" lang="id">
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Komisariat UMKT Paser - PMII Paser</title>
+    <link rel="stylesheet" href="asset/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fbf9f8;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-nav-border {
+            border-bottom: 2px solid #fcd400;
+        }
+    </style>
+</head>
+<body class="text-on-surface antialiased overflow-x-hidden">
+    <!-- Navigation Bar -->
+    <div id="header-placeholder"></div>
+
+    <main class="pt-24 min-h-screen">
+        <div class="max-w-7xl mx-auto px-8 py-8">
+            <!-- Breadcrumbs & Back Button -->
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-8">
+                <a href="index.html" class="inline-flex items-center gap-2 text-slate-600 hover:text-primary transition-all font-semibold py-2">
+                    <span class="material-symbols-outlined text-base">arrow_back</span> Kembali ke Beranda
+                </a>
+                <div class="text-sm text-slate-500 font-medium flex items-center gap-2">
+                    <span>Beranda</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span>Komisariat</span>
+                    <span class="material-symbols-outlined text-xs">chevron_right</span>
+                    <span class="text-primary font-bold">UMKT Paser</span>
+                </div>
+            </div>
+
+            <!-- Hero Banner Card -->
+            <div class="relative rounded-3xl overflow-hidden shadow-lg h-72 md:h-96 mb-8">
+                <img src="asset/image/PMII-5.jpg" alt="Komisariat UMKT Paser" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/40 to-transparent"></div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                    <span class="inline-block py-1 px-3 rounded-full bg-secondary-container text-on-secondary-container text-caption font-bold mb-3 uppercase">UNIVERSITAS MUHAMMADIYAH KALIMANTAN TIMUR (UMKT) PASER</span>
+                    <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight">Komisariat UMKT Paser</h2>
+                </div>
+            </div>
+
+            <!-- Info Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white border border-outline-variant/30 p-6 rounded-2xl text-center shadow-sm">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-2">calendar_today</span>
+                    <p class="text-xs text-on-surface-variant font-medium">Tahun Berdiri</p>
+                    <p class="text-lg font-bold text-primary">2021</p>
+                </div>
+                <div class="bg-white border border-outline-variant/30 p-6 rounded-2xl text-center shadow-sm">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-2">groups</span>
+                    <p class="text-xs text-on-surface-variant font-medium">Kekuatan Kader</p>
+                    <p class="text-lg font-bold text-primary">180+ Kader</p>
+                </div>
+                <div class="bg-white border border-outline-variant/30 p-6 rounded-2xl text-center shadow-sm col-span-2 md:col-span-2">
+                    <span class="material-symbols-outlined text-3xl text-secondary mb-2">person</span>
+                    <p class="text-xs text-on-surface-variant font-medium">Ketua Komisariat</p>
+                    <p class="text-base font-bold text-primary truncate">Sahabat Dedy Wijaya</p>
+                </div>
+            </div>
+
+            <!-- Tabs Navigation -->
+            <div class="border-b border-outline-variant/30 mb-8">
+                <nav class="flex gap-8 -mb-[1px]">
+                    <button id="tab-btn-beranda" onclick="switchTab('beranda')" class="py-4 px-1 border-b-2 border-primary text-primary font-bold text-base flex items-center gap-2 transition-all">
+                        <span class="material-symbols-outlined text-lg">home</span> Beranda Komisariat
+                    </button>
+                    <button id="tab-btn-struktur" onclick="switchTab('struktur')" class="py-4 px-1 border-b-2 border-transparent text-slate-500 hover:text-primary font-bold text-base flex items-center gap-2 transition-all">
+                        <span class="material-symbols-outlined text-lg">shield_person</span> Struktur Organisasi
+                    </button>
+                </nav>
+            </div>
+
+            <!-- Content Panels -->
+            <div>
+                <!-- PANEL 1: BERANDA -->
+                <div id="panel-beranda" class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                    <div class="lg:col-span-8 space-y-8">
+                        <!-- Tagline Card -->
+                        <div class="bg-primary text-white p-8 rounded-3xl shadow-sm relative overflow-hidden">
+                            <div class="absolute -right-8 -bottom-8 opacity-10">
+                                <span class="material-symbols-outlined text-[120px]" style="font-variation-settings: 'FILL' 1;">format_quote</span>
+                            </div>
+                            <div class="relative z-10">
+                                <p class="font-caption text-secondary-fixed font-bold uppercase tracking-widest text-xs mb-2">Motto / Tagline</p>
+                                <p class="text-xl md:text-2xl font-extrabold italic text-secondary-fixed">"Saintifik, Inovatif, & Moderat Menyongsong Masa Depan."</p>
+                            </div>
+                        </div>
+
+                        <!-- About Section -->
+                        <div class="bg-white border border-outline-variant/20 p-8 rounded-3xl space-y-6 shadow-sm">
+                            <h3 class="text-2xl font-bold text-primary border-b border-slate-100 pb-3 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-secondary">info</span> Tentang Kami
+                            </h3>
+                            <p class="text-on-surface-variant leading-relaxed">
+                                Komisariat termuda yang progresif, berfokus pada sains dan teknologi, serta inklusivitas pemikiran keislaman yang moderat. Kami berkomitmen menyebarkan pemikiran Islam pergerakan yang ramah dan solutif di lingkungan kampus.
+                            </p>
+                            <div class="bg-surface-container-low p-5 rounded-2xl border-l-4 border-secondary">
+                                <p class="font-bold text-primary mb-2">Sejarah Singkat</p>
+                                <p class="text-sm text-on-surface-variant leading-relaxed">
+                                    Didirikan di kampus UMKT Tanah Grogot untuk memfasilitasi mahasiswa yang ingin memperdalam wacana keislaman Aswaja dengan nafas perjuangan dan kemahasiswaan PMII.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Vision & Mission Section -->
+                        <div class="bg-white border border-outline-variant/20 p-8 rounded-3xl space-y-6 shadow-sm">
+                            <h3 class="text-2xl font-bold text-primary border-b border-slate-100 pb-3 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-secondary">explore</span> Visi &amp; Misi
+                            </h3>
+                            <div>
+                                <p class="font-bold text-secondary uppercase text-xs tracking-wider mb-2">Visi Komisariat</p>
+                                <p class="text-lg text-primary italic font-medium leading-relaxed bg-slate-50 p-4 rounded-xl">
+                                    "Menjadi pusat pergerakan mahasiswa yang progresif, ilmiah, dan berintegritas di lingkungan kampus UMKT Paser."
+                                </p>
+                            </div>
+                            <div class="pt-2">
+                                <p class="font-bold text-secondary uppercase text-xs tracking-wider mb-4">Misi Komisariat</p>
+                                <ul class="space-y-3 pl-0">
+                                    <li class="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
+                                        <span class="w-6 h-6 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">1</span>
+                                        <span>Menyelenggarakan forum diskusi ilmiah, riset sosial kemasyarakatan, dan pengkajian isu terkini.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
+                                        <span class="w-6 h-6 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">2</span>
+                                        <span>Memperkuat nilai-nilai toleransi, pluralisme, dan moderasi beragama di kalangan mahasiswa.</span>
+                                    </li>
+                                    <li class="flex items-start gap-3 text-on-surface-variant text-sm leading-relaxed">
+                                        <span class="w-6 h-6 rounded-full bg-secondary-container/20 text-secondary flex items-center justify-center font-bold text-xs shrink-0 mt-0.5">3</span>
+                                        <span>Mencetak kader yang menguasai teknologi dan sains untuk menjawab tantangan zaman baru.</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Programs Section -->
+                        <div class="bg-white border border-outline-variant/20 p-8 rounded-3xl space-y-6 shadow-sm">
+                            <h3 class="text-2xl font-bold text-primary border-b border-slate-100 pb-3 flex items-center gap-3">
+                                <span class="material-symbols-outlined text-secondary">insights</span> Program Utama / Unggulan
+                            </h3>
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div class="bg-surface-container-low border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:border-secondary transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="w-10 h-10 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center mb-4">
+                                            <span class="material-symbols-outlined text-xl">science</span>
+                                        </div>
+                                        <h4 class="font-bold text-primary text-base mb-2">Riset Kemasyarakatan</h4>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Penelitian lapangan mengenai isu-isu sosial dan lingkungan hidup di Paser.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-surface-container-low border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:border-secondary transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="w-10 h-10 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center mb-4">
+                                            <span class="material-symbols-outlined text-xl">chat</span>
+                                        </div>
+                                        <h4 class="font-bold text-primary text-base mb-2">Ngobrol Pintar (NGOPI)</h4>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Podcast dan sarasehan bulanan membahas sains, agama, dan humaniora.</p>
+                                    </div>
+                                </div>
+                                <div class="bg-surface-container-low border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:border-secondary transition-all flex flex-col justify-between">
+                                    <div>
+                                        <div class="w-10 h-10 rounded-xl bg-secondary-container/20 text-secondary flex items-center justify-center mb-4">
+                                            <span class="material-symbols-outlined text-xl">diversity_1</span>
+                                        </div>
+                                        <h4 class="font-bold text-primary text-base mb-2">Harmoni Inklusif</h4>
+                                        <p class="text-xs text-on-surface-variant leading-relaxed">Forum dialog antar-organisasi untuk memupuk semangat kebersamaan dan moderasi.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Sidebar -->
+                    <div class="lg:col-span-4 space-y-8">
+                        <div class="bg-primary text-white p-8 rounded-3xl shadow-xl relative overflow-hidden text-center">
+                            <div class="absolute -right-8 -bottom-8 opacity-10">
+                                <span class="material-symbols-outlined text-[150px]">campaign</span>
+                            </div>
+                            <div class="relative z-10 space-y-4">
+                                <h3 class="text-2xl font-bold text-secondary-fixed">Yuk, Gabung Bersama Kami!</h3>
+                                <p class="text-sm text-primary-fixed leading-relaxed">
+                                    Jadilah bagian dari gerakan perubahan intelektual dan keagamaan di kampus <strong>Universitas Muhammadiyah Kalimantan Timur (UMKT) Paser</strong> bersama PMII.
+                                </p>
+                                <div class="pt-4">
+                                    <a href="daftar.html" class="inline-block w-full py-4 bg-secondary-container text-on-secondary-container hover:brightness-95 font-bold rounded-xl shadow-md transition-all text-base">
+                                        Daftar MAPABA 2026
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PANEL 2: STRUKTUR -->
+                <div id="panel-struktur" class="hidden space-y-10">
+                    <!-- BPH Section -->
+                    <div class="bg-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm">
+                        <h3 class="text-2xl font-bold text-primary text-center mb-8 pb-3 border-b border-slate-100 flex items-center justify-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">diversity_3</span> Badan Pengurus Harian (BPH)
+                        </h3>
+                        <div class="space-y-8">
+                            <!-- Ketua -->
+                            <div class="flex justify-center">
+                                <div class="bg-surface-container-low border border-outline-variant/30 p-6 rounded-2xl text-center shadow-sm w-full max-w-sm relative overflow-hidden group hover:border-secondary transition-all">
+                                    <div class="absolute top-0 left-0 w-full h-1.5 bg-secondary"></div>
+                                    <div class="w-20 h-20 rounded-full bg-primary text-white flex items-center justify-center text-2xl font-extrabold mx-auto mb-4 shadow-sm">DW</div>
+                                    <h4 class="font-bold text-primary text-lg">Sahabat Dedy Wijaya</h4>
+                                    <p class="text-caption text-secondary font-bold uppercase tracking-widest mt-1">Ketua Komisariat</p>
+                                </div>
+                            </div>
+
+                            <!-- Rest of BPH -->
+                            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 justify-center">
+                                <div class="bg-white border border-outline-variant/20 p-5 rounded-2xl text-center shadow-xs hover:border-secondary transition-all flex flex-col items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-100 text-primary flex items-center justify-center font-bold text-base mb-3">HP</div>
+                                    <h5 class="font-bold text-primary text-sm leading-tight">Sahabat Hendy Pratama</h5>
+                                    <p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider mt-1">Wakil Ketua</p>
+                                </div>
+                                <div class="bg-white border border-outline-variant/20 p-5 rounded-2xl text-center shadow-xs hover:border-secondary transition-all flex flex-col items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-100 text-primary flex items-center justify-center font-bold text-base mb-3">FM</div>
+                                    <h5 class="font-bold text-primary text-sm leading-tight">Sahabat Farhan Maulana</h5>
+                                    <p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider mt-1">Sekretaris</p>
+                                </div>
+                                <div class="bg-white border border-outline-variant/20 p-5 rounded-2xl text-center shadow-xs hover:border-secondary transition-all flex flex-col items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-100 text-primary flex items-center justify-center font-bold text-base mb-3">IL</div>
+                                    <h5 class="font-bold text-primary text-sm leading-tight">Sahabati Indah Lestari</h5>
+                                    <p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider mt-1">Wakil Sekretaris</p>
+                                </div>
+                                <div class="bg-white border border-outline-variant/20 p-5 rounded-2xl text-center shadow-xs hover:border-secondary transition-all flex flex-col items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-100 text-primary flex items-center justify-center font-bold text-base mb-3">SR</div>
+                                    <h5 class="font-bold text-primary text-sm leading-tight">Sahabati Siti Rahma</h5>
+                                    <p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider mt-1">Bendahara</p>
+                                </div>
+                                <div class="bg-white border border-outline-variant/20 p-5 rounded-2xl text-center shadow-xs hover:border-secondary transition-all flex flex-col items-center justify-center">
+                                    <div class="w-12 h-12 rounded-full bg-slate-100 text-primary flex items-center justify-center font-bold text-base mb-3">NB</div>
+                                    <h5 class="font-bold text-primary text-sm leading-tight">Sahabati Nabilah</h5>
+                                    <p class="text-[11px] text-on-surface-variant font-medium uppercase tracking-wider mt-1">Wakil Bendahara</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Divisions / Bureaus Section -->
+                    <div class="bg-white border border-outline-variant/20 p-8 rounded-3xl shadow-sm">
+                        <h3 class="text-2xl font-bold text-primary text-center mb-8 pb-3 border-b border-slate-100 flex items-center justify-center gap-3">
+                            <span class="material-symbols-outlined text-secondary">splitscreen</span> Biro &amp; Departemen
+                        </h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-white border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all">
+                                <div class="flex items-center gap-3 border-b border-slate-50 pb-3 mb-4">
+                                    <span class="material-symbols-outlined text-secondary text-xl">folder_shared</span>
+                                    <h4 class="font-bold text-primary text-base">Biro Riset &amp; Intelektual</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Kepala Biro</p>
+                                        <p class="text-sm font-bold text-primary">Sahabat Surya Wijaya</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-2">Anggota</p>
+                                        <ul class="space-y-1.5 pl-0">
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabat Wildan
+                                            </li>
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabati Diana
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all">
+                                <div class="flex items-center gap-3 border-b border-slate-50 pb-3 mb-4">
+                                    <span class="material-symbols-outlined text-secondary text-xl">folder_shared</span>
+                                    <h4 class="font-bold text-primary text-base">Biro Kaderisasi</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Kepala Biro</p>
+                                        <p class="text-sm font-bold text-primary">Sahabat Teguh Prasetyo</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-2">Anggota</p>
+                                        <ul class="space-y-1.5 pl-0">
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabat Panji
+                                            </li>
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabati Intan
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all">
+                                <div class="flex items-center gap-3 border-b border-slate-50 pb-3 mb-4">
+                                    <span class="material-symbols-outlined text-secondary text-xl">folder_shared</span>
+                                    <h4 class="font-bold text-primary text-base">Biro Humas &amp; Jaringan</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Kepala Biro</p>
+                                        <p class="text-sm font-bold text-primary">Sahabati Risma Fitria</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-2">Anggota</p>
+                                        <ul class="space-y-1.5 pl-0">
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabat Satria
+                                            </li>
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabati Vira
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-white border border-outline-variant/20 p-6 rounded-2xl shadow-xs hover:shadow-md transition-all">
+                                <div class="flex items-center gap-3 border-b border-slate-50 pb-3 mb-4">
+                                    <span class="material-symbols-outlined text-secondary text-xl">folder_shared</span>
+                                    <h4 class="font-bold text-primary text-base">Biro Dokumentasi &amp; Media</h4>
+                                </div>
+                                <div class="space-y-3">
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider">Kepala Biro</p>
+                                        <p class="text-sm font-bold text-primary">Sahabat Ricky Kurniawan</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-[10px] text-on-surface-variant uppercase font-bold tracking-wider mb-2">Anggota</p>
+                                        <ul class="space-y-1.5 pl-0">
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabat Rafi
+                                            </li>
+                                            <li class="flex items-center gap-2 text-xs text-on-surface-variant">
+                                                <span class="w-1.5 h-1.5 bg-secondary rounded-full"></span> Sahabati Nadia
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script>
+        function switchTab(tabName) {
+            const btnBeranda = document.getElementById('tab-btn-beranda');
+            const btnStruktur = document.getElementById('tab-btn-struktur');
+            const panelBeranda = document.getElementById('panel-beranda');
+            const panelStruktur = document.getElementById('panel-struktur');
+
+            if (tabName === 'beranda') {
+                btnBeranda.classList.add('border-primary', 'text-primary');
+                btnBeranda.classList.remove('border-transparent', 'text-slate-500');
+                btnStruktur.classList.add('border-transparent', 'text-slate-500');
+                btnStruktur.classList.remove('border-primary', 'text-primary');
+
+                panelBeranda.classList.remove('hidden');
+                panelStruktur.classList.add('hidden');
+            } else {
+                btnStruktur.classList.add('border-primary', 'text-primary');
+                btnStruktur.classList.remove('border-transparent', 'text-slate-500');
+                btnBeranda.classList.add('border-transparent', 'text-slate-500');
+                btnBeranda.classList.remove('border-primary', 'text-primary');
+
+                panelStruktur.classList.remove('hidden');
+                panelBeranda.classList.add('hidden');
+            }
+        }
+    </script>
+</body>
+</html>
